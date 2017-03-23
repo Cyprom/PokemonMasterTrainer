@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyprom.PokemonMasterTrainer.UserInterface", "Cyprom.PokemonMasterTrainer.UserInterface\Cyprom.PokemonMasterTrainer.UserInterface.csproj", "{996AC9A9-300E-4CF2-A11A-2E6D8FDD3D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyprom.PokemonMasterTrainer", "Cyprom.PokemonMasterTrainer\Cyprom.PokemonMasterTrainer.csproj", "{BB1F2502-10C4-4DAA-BE33-052D0ABDB021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyprom.PokemonMasterTrainer.Data", "Cyprom.PokemonMasterTrainer.Data\Cyprom.PokemonMasterTrainer.Data.csproj", "{83D0D726-DE23-4EE1-9295-03D26B39CB2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyprom.PokemonMasterTrainer.Business", "Cyprom.PokemonMasterTrainer.Business\Cyprom.PokemonMasterTrainer.Business.csproj", "{0D2DEADD-AB86-42D3-94B4-ECDC28FE9C2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{996AC9A9-300E-4CF2-A11A-2E6D8FDD3D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996AC9A9-300E-4CF2-A11A-2E6D8FDD3D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996AC9A9-300E-4CF2-A11A-2E6D8FDD3D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996AC9A9-300E-4CF2-A11A-2E6D8FDD3D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1F2502-10C4-4DAA-BE33-052D0ABDB021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1F2502-10C4-4DAA-BE33-052D0ABDB021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1F2502-10C4-4DAA-BE33-052D0ABDB021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1F2502-10C4-4DAA-BE33-052D0ABDB021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D0D726-DE23-4EE1-9295-03D26B39CB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D0D726-DE23-4EE1-9295-03D26B39CB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D0D726-DE23-4EE1-9295-03D26B39CB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D0D726-DE23-4EE1-9295-03D26B39CB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D2DEADD-AB86-42D3-94B4-ECDC28FE9C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D2DEADD-AB86-42D3-94B4-ECDC28FE9C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D2DEADD-AB86-42D3-94B4-ECDC28FE9C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D2DEADD-AB86-42D3-94B4-ECDC28FE9C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

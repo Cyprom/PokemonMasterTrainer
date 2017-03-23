@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83D0D726-DE23-4EE1-9295-03D26B39CB2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cyprom.PokemonMasterTrainer.Data</RootNamespace>
+    <AssemblyName>Cyprom.PokemonMasterTrainer.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameRepository.cs" />
+    <Compile Include="DataObjects\BoardStateData.cs" />
+    <Compile Include="DataObjects\CatchSpaceData.cs" />
+    <Compile Include="DataObjects\ChipData.cs" />
+    <Compile Include="DataObjects\PlayerData.cs" />
+    <Compile Include="DataObjects\SpaceData.cs" />
+    <Compile Include="DataObjects\TrainerData.cs" />
+    <Compile Include="GameData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ObjectSerializer.cs" />
+    <Compile Include="Helpers\QueryBuilder.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Loaders\AudioLoader.cs" />
+    <Compile Include="Loaders\BackgroundLoader.cs" />
+    <Compile Include="Loaders\CardLoader.cs" />
+    <Compile Include="Loaders\ChipLoader.cs" />
+    <Compile Include="Loaders\EliteLoader.cs" />
+    <Compile Include="Loaders\EvolutionLoader.cs" />
+    <Compile Include="Loaders\LocationLoader.cs" />
+    <Compile Include="Loaders\OptionImageLoader.cs" />
+    <Compile Include="Loaders\SpaceLoader.cs" />
+    <Compile Include="Loaders\TrainerLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cyprom.PokemonMasterTrainer\Cyprom.PokemonMasterTrainer.csproj">
+      <Project>{bb1f2502-10c4-4daa-be33-052d0abdb021}</Project>
+      <Name>Cyprom.PokemonMasterTrainer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GameDatabase.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Options\ScreenLock_On.png" />
+    <None Include="Resources\Options\ScreenLock_Off.png" />
+    <None Include="Resources\Audio\Sound\Whistle.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Roll.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Revival.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Pokedex.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\NewTurn.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Move.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\ItemFound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Hover.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Fly.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Flip.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Ferry.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Failure.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Dungeon.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Draw.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Coin.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Click.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Challenge.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Catch.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Battle.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Sound\Bag.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Players\Misty.png" />
+    <None Include="Resources\Players\Brock.png" />
+    <None Include="Resources\Players\Ash.png" />
+    <None Include="Resources\Other\Space.png" />
+    <None Include="Resources\Options\Sound_On.png" />
+    <None Include="Resources\Options\Sound_Off.png" />
+    <None Include="Resources\Options\Music_On.png" />
+    <None Include="Resources\Options\Music_Off.png" />
+    <None Include="Resources\Options\Log_On.png" />
+    <None Include="Resources\Options\Log_Off.png" />
+    <None Include="Resources\Options\AutoSave_On.png" />
+    <None Include="Resources\Options\AutoSave_Off.png" />
+    <None Include="Resources\Elite\Lorelei.png" />
+    <None Include="Resources\Elite\Lance.png" />
+    <None Include="Resources\Elite\Gary.png" />
+    <None Include="Resources\Elite\Elite.png" />
+    <None Include="Resources\Elite\Bruno.png" />
+    <None Include="Resources\Elite\Agatha.png" />
+    <None Include="Resources\Chips\Fronts\Yellow\Zapdos.png" />
+    <None Include="Resources\Chips\Fronts\Yellow\Moltres.png" />
+    <None Include="Resources\Chips\Fronts\Yellow\Mewtwo.png" />
+    <None Include="Resources\Chips\Fronts\Yellow\Mew.png" />
+    <None Include="Resources\Chips\Fronts\Yellow\Articuno.png" />
+    <None Include="Resources\Chips\Fronts\Starter\Squirtle.png" />
+    <None Include="Resources\Chips\Fronts\Starter\Charmander.png" />
+    <None Include="Resources\Chips\Fronts\Starter\Bulbasaur.png" />
+    <None Include="Resources\Chips\Fronts\Red\Vileplume.png" />
+    <None Include="Resources\Chips\Fronts\Red\Victreebel.png" />
+    <None Include="Resources\Chips\Fronts\Red\Venusaur.png" />
+    <None Include="Resources\Chips\Fronts\Red\Tauros.png" />
+    <None Include="Resources\Chips\Fronts\Red\Snorlax.png" />
+    <None Include="Resources\Chips\Fronts\Red\Rhydon.png" />
+    <None Include="Resources\Chips\Fronts\Red\Rapidash.png" />
+    <None Include="Resources\Chips\Fronts\Red\Poliwrath.png" />
+    <None Include="Resources\Chips\Fronts\Red\Omastar.png" />
+    <None Include="Resources\Chips\Fronts\Red\Ninetales.png" />
+    <None Include="Resources\Chips\Fronts\Red\Nidoqueen.png" />
+    <None Include="Resources\Chips\Fronts\Red\Nidoking.png" />
+    <None Include="Resources\Chips\Fronts\Red\Magmar.png" />
+    <None Include="Resources\Chips\Fronts\Red\Machamp.png" />
+    <None Include="Resources\Chips\Fronts\Red\Lapras.png" />
+    <None Include="Resources\Chips\Fronts\Red\Kangaskhan.png" />
+    <None Include="Resources\Chips\Fronts\Red\Kabutops.png" />
+    <None Include="Resources\Chips\Fronts\Red\Gyarados.png" />
+    <None Include="Resources\Chips\Fronts\Red\Golem.png" />
+    <None Include="Resources\Chips\Fronts\Red\Gengar.png" />
+    <None Include="Resources\Chips\Fronts\Red\Exeggutor.png" />
+    <None Include="Resources\Chips\Fronts\Red\Electabuzz.png" />
+    <None Include="Resources\Chips\Fronts\Red\Dragonite.png" />
+    <None Include="Resources\Chips\Fronts\Red\Charizard.png" />
+    <None Include="Resources\Chips\Fronts\Red\Chansey.png" />
+    <None Include="Resources\Chips\Fronts\Red\Blastoise.png" />
+    <None Include="Resources\Chips\Fronts\Red\Arcanine.png" />
+    <None Include="Resources\Chips\Fronts\Red\Alakazam.png" />
+    <None Include="Resources\Chips\Fronts\Red\Aerodactyl.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Zubat.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Weedle.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Voltorb.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Venonat.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Tentacool.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Staryu.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Spearow.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Slowpoke.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Shellder.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Seel.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Sandshrew.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Rattata.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Psyduck.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Poliwag.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Pikachu.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Pidgey.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Paras.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Oddish.png" />
+    <None Include="Resources\Chips\Fronts\Pink\NidoranM.png" />
+    <None Include="Resources\Chips\Fronts\Pink\NidoranF.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Meowth.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Mankey.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Magnemite.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Magikarp.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Krabby.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Koffing.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Jigglypuff.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Horsea.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Grimer.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Goldeen.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Ekans.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Drowzee.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Doduo.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Diglett.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Cubone.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Clefairy.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Caterpie.png" />
+    <None Include="Resources\Chips\Fronts\Pink\Bellsprout.png" />
+    <None Include="Resources\Chips\Fronts\Green\Wigglytuff.png" />
+    <None Include="Resources\Chips\Fronts\Green\Weepinbell.png" />
+    <None Include="Resources\Chips\Fronts\Green\Vulpix.png" />
+    <None Include="Resources\Chips\Fronts\Green\Tentacruel.png" />
+    <None Include="Resources\Chips\Fronts\Green\Tangela.png" />
+    <None Include="Resources\Chips\Fronts\Green\Starmie.png" />
+    <None Include="Resources\Chips\Fronts\Green\Slowbro.png" />
+    <None Include="Resources\Chips\Fronts\Green\Seaking.png" />
+    <None Include="Resources\Chips\Fronts\Green\Seadra.png" />
+    <None Include="Resources\Chips\Fronts\Green\Rhyhorn.png" />
+    <None Include="Resources\Chips\Fronts\Green\Raticate.png" />
+    <None Include="Resources\Chips\Fronts\Green\Ponyta.png" />
+    <None Include="Resources\Chips\Fronts\Green\Poliwhirl.png" />
+    <None Include="Resources\Chips\Fronts\Green\Pidgeotto.png" />
+    <None Include="Resources\Chips\Fronts\Green\Parasect.png" />
+    <None Include="Resources\Chips\Fronts\Green\Nidorino.png" />
+    <None Include="Resources\Chips\Fronts\Green\Nidorina.png" />
+    <None Include="Resources\Chips\Fronts\Green\Muk.png" />
+    <None Include="Resources\Chips\Fronts\Green\Metapod.png" />
+    <None Include="Resources\Chips\Fronts\Green\Magneton.png" />
+    <None Include="Resources\Chips\Fronts\Green\Machop.png" />
+    <None Include="Resources\Chips\Fronts\Green\Kingler.png" />
+    <None Include="Resources\Chips\Fronts\Green\Kakuna.png" />
+    <None Include="Resources\Chips\Fronts\Green\Growlithe.png" />
+    <None Include="Resources\Chips\Fronts\Green\Golbat.png" />
+    <None Include="Resources\Chips\Fronts\Green\Gloom.png" />
+    <None Include="Resources\Chips\Fronts\Green\Geodude.png" />
+    <None Include="Resources\Chips\Fronts\Green\Gastly.png" />
+    <None Include="Resources\Chips\Fronts\Green\Farfetch%27d.png" />
+    <None Include="Resources\Chips\Fronts\Green\Exeggcute.png" />
+    <None Include="Resources\Chips\Fronts\Green\Electrode.png" />
+    <None Include="Resources\Chips\Fronts\Green\Eevee.png" />
+    <None Include="Resources\Chips\Fronts\Green\Dugtrio.png" />
+    <None Include="Resources\Chips\Fronts\Green\Dratini.png" />
+    <None Include="Resources\Chips\Fronts\Green\Dodrio.png" />
+    <None Include="Resources\Chips\Fronts\Green\Cloyster.png" />
+    <None Include="Resources\Chips\Fronts\Green\Clefable.png" />
+    <None Include="Resources\Chips\Fronts\Green\Abra.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Weezing.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Wartortle.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Venomoth.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Vaporeon.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Scyther.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Sandslash.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Raichu.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Primeape.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Porygon.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Pinsir.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Pidgeot.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Persian.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Onix.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Omanyte.png" />
+    <None Include="Resources\Chips\Fronts\Blue\MrMime.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Marowak.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Machoke.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Lickitung.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Kadabra.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Kabuto.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Jynx.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Jolteon.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Ivysaur.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Hypno.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Hitmonlee.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Hitmonchan.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Haunter.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Graveler.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Golduck.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Flareon.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Fearow.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Dragonair.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Ditto.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Dewgong.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Charmeleon.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Butterfree.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Beedrill.png" />
+    <None Include="Resources\Chips\Fronts\Blue\Arbok.png" />
+    <None Include="Resources\Chips\Backs\Yellow.png" />
+    <None Include="Resources\Chips\Backs\Starter.png" />
+    <None Include="Resources\Chips\Backs\Red.png" />
+    <None Include="Resources\Chips\Backs\Pink.png" />
+    <None Include="Resources\Chips\Backs\Green.png" />
+    <None Include="Resources\Chips\Backs\Blue.png" />
+    <None Include="Resources\Cards\Items\UltraBall.png" />
+    <None Include="Resources\Cards\Items\Potion.png" />
+    <None Include="Resources\Cards\Items\PokeDoll.png" />
+    <None Include="Resources\Cards\Items\MasterBall.png" />
+    <None Include="Resources\Cards\Items\GreatBall.png" />
+    <None Include="Resources\Cards\Items\Fly.png" />
+    <None Include="Resources\Cards\Items\AttackBonus5.png" />
+    <None Include="Resources\Cards\Items\AttackBonus4.png" />
+    <None Include="Resources\Cards\Items\AttackBonus3.png" />
+    <None Include="Resources\Cards\Items\AttackBonus2.png" />
+    <None Include="Resources\Cards\Items\AttackBonus1.png" />
+    <None Include="Resources\Cards\Events\Trade.png" />
+    <None Include="Resources\Cards\Events\TeamRocket.png" />
+    <None Include="Resources\Cards\Events\PokemonCenter.png" />
+    <None Include="Resources\Cards\Events\ItemFinder3.png" />
+    <None Include="Resources\Cards\Events\ItemFinder2.png" />
+    <None Include="Resources\Cards\Events\ItemFinder1.png" />
+    <None Include="Resources\Cards\Events\Investigation.png" />
+    <None Include="Resources\Cards\Events\DungeonOfLegends.png" />
+    <None Include="Resources\Cards\Events\Challenge.png" />
+    <None Include="Resources\Board\Board_RedRug.png" />
+    <None Include="Resources\Board\Board_GreenCloth.png" />
+    <None Include="Resources\Board\Board_BrownDirt.png" />
+    <None Include="Resources\Board\Board_BlueBubble.png" />
+    <None Include="Resources\Board\Board.png" />
+    <None Include="Resources\Audio\Music\Viridian_Pewter_Saffron.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Victory.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Vermilion_To_Lavender.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Theme.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Surfing.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\SS_Anne.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Silph_Co.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Routes.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Rocket_Hideout.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Pokemon_Center.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Poke_Flute.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Pallet_Town.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Oak_Laboratory.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Mansion.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Lavender.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Ghost_Tower.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Game_Corner.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Forest.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Following.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Final_Road.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Cinnabar.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Cerulean_Fuchsia.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Cerulean_Bridge.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Celadon.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Caves.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Audio\Music\Bicycle.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="GameData.xsc">
+      <DependentUpon>GameData.xsd</DependentUpon>
+    </None>
+    <None Include="GameData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GameData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GameData.xss">
+      <DependentUpon>GameData.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
